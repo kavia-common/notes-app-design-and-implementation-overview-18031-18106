@@ -1,0 +1,4 @@
+{
+    "command": "npm install",
+    "working_directory": "/home/kavia/workspace/code-generation/notes-app-design-and-implementation-overview-18031-18106/notes_app_presentation_frontend"
+}
