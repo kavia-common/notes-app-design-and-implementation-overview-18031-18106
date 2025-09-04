@@ -1,27 +1,15 @@
-# Imported Slides
+# Extra Slides (import example)
 
 You can split your slides.md into multiple files and organize them as you want using the `src` attribute.
 
-#### `slides.md`
+#### `slides.md` (excerpt)
 
 ```markdown
-# Page 1
-
-Page 2 from main entry.
+# Appendix: Additional Notes
 
 ---
 
-## src: ./subpage.md
+## src: ./pages/imported-slides.md
 ```
 
-<br>
-
-#### `subpage.md`
-
-```markdown
-# Page 2
-
-Page 2 from another file.
-```
-
-[Learn more](https://sli.dev/guide/syntax.html#importing-slides)
+This page demonstrates content that can be imported later for deep dives or appendices.

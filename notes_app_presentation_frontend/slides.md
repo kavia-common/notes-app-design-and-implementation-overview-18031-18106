@@ -1,10 +1,10 @@
 ---
 # Global deck settings
 theme: default
-title: Your Presentation Title
+title: "Notes App — Design & Implementation Overview"
 info: |
-  Professional presentation template with dark theme
-  20 slides with modern components
+  A concise, interactive Slidev presentation showcasing the features, UX design, and technical decisions behind a modern notes‑taking app.
+  Includes interactive demos, code samples, and architecture diagrams.
 class: text-left
 mdc: true
 transition: slide-left
@@ -13,562 +13,469 @@ fonts:
   mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
 css: |
   @import "./style.css";
+highlighter: shiki
+lineNumbers: true
+drawings:
+  persist: false
 ---
 
-# PROJECT TITLE
+# Notes App
 <div class="title-slide with-hero-glow">
   <div class="hero-copy">
-    <h2 class="text-hero">Transform Your Business with Innovation</h2>
-    <p class="subtitle text-md">A comprehensive solution for modern enterprises</p>
-    <div class="subtitle text-xs">Presenter Name • Date • contact@example.com</div>
+    <h2 class="text-hero">Design • Features • Implementation</h2>
+    <p class="subtitle text-md">A modern, minimal, and responsive notes experience</p>
+    <div class="subtitle text-xs">Presenter: You • Date</div>
     <div class="hero-ctas mt-2">
-      <button class="btn-primary">Get Started</button>
-      <button class="btn-secondary">Learn More</button>
+      <a class="btn-primary" href="#agenda">View Agenda</a>
+      <a class="btn-secondary" href="https://sli.dev" target="_blank" rel="noreferrer">About Slidev</a>
     </div>
   </div>
 </div>
 
 ---
 
-# The Challenge
-
-<div class="problem-grid">
-  <div class="problem-card">
-    <div class="eyebrow">Current State</div>
-    <h3 class="feature-title">Market Inefficiencies</h3>
-    <ul class="points-clean">
-      <li>Complex processes and workflows</li>
-      <li>Disconnected systems and data silos</li>
-      <li>High operational costs</li>
-    </ul>
-  </div>
-
-  <div class="problem-card">
-    <div class="eyebrow">Industry Trends</div>
-    <h3 class="feature-title">Rapid Digital Evolution</h3>
-    <ul class="points-clean">
-      <li>Accelerating technology adoption</li>
-      <li>Changing customer expectations</li>
-      <li>New competitive pressures</li>
-    </ul>
-  </div>
-
-  <div class="problem-card">
-    <div class="eyebrow">Gap Analysis</div>
-    <h3 class="feature-title">Missing Capabilities</h3>
-    <ul class="points-clean">
-      <li>Limited automation tools</li>
-      <li>Insufficient analytics</li>
-      <li>Poor integration options</li>
-      <li>Lack of scalability</li>
-    </ul>
-  </div>
-</div>
-
----
-
-# Our Solution
-
-A comprehensive platform that addresses key business challenges
-
-<div class="stats-band mt-2">
-  <div class="stat-card">
-    <div class="stat-number">10x</div>
-    <div class="stat-label">Faster Processing</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">50%</div>
-    <div class="stat-label">Cost Reduction</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">99.9%</div>
-    <div class="stat-label">Uptime</div>
-  </div>
-</div>
+# Agenda {#agenda}
 
 <div class="card-grid three mt-2">
   <div class="feature-card">
-    <div class="eyebrow">Core</div>
-    <h3 class="feature-title">Intelligent Automation</h3>
-    <p class="muted">Streamline workflows with AI-powered processes</p>
+    <div class="eyebrow">01</div>
+    <h3 class="feature-title">Product Overview</h3>
+    <ul class="points-clean">
+      <li>Problem & goals</li>
+      <li>Personas & scenarios</li>
+      <li>Feature tour</li>
+    </ul>
   </div>
-
   <div class="feature-card">
-    <div class="eyebrow">Integration</div>
-    <h3 class="feature-title">Seamless Connectivity</h3>
-    <p class="muted">Connect all your tools and systems effortlessly</p>
+    <div class="eyebrow">02</div>
+    <h3 class="feature-title">Design System</h3>
+    <ul class="points-clean">
+      <li>IA & navigation</li>
+      <li>UI building blocks</li>
+      <li>Light theme defaults</li>
+    </ul>
   </div>
-
   <div class="feature-card">
-    <div class="eyebrow">Analytics</div>
-    <h3 class="feature-title">Real-time Insights</h3>
-    <p class="muted">Make data-driven decisions with powerful analytics</p>
+    <div class="eyebrow">03</div>
+    <h3 class="feature-title">Implementation</h3>
+    <ul class="points-clean">
+      <li>Architecture</li>
+      <li>Data model</li>
+      <li>APIs & sync</li>
+    </ul>
   </div>
 </div>
 
 ---
 
-# Key Features
+# Layout concept
 
 <div class="split-cols mt-2">
   <div class="left">
     <div class="feature-card">
-      <h3 class="feature-title">Smart Dashboard</h3>
-      <p class="muted">Centralized control and monitoring</p>
+      <div class="eyebrow">Navigation</div>
+      <h3 class="feature-title">Sidebar + Content</h3>
+      <ul class="points-clean">
+        <li>Persistent sidebar for quick context switching</li>
+        <li>Main canvas for note reading & editing</li>
+        <li>Keyboard-first workflow</li>
+      </ul>
     </div>
     <div class="feature-card">
-      <h3 class="feature-title">Advanced Analytics</h3>
-      <p class="muted">Deep insights and predictive modeling</p>
-    </div>
-    <div class="feature-card">
-      <h3 class="feature-title">Workflow Automation</h3>
-      <p class="muted">Streamline repetitive tasks</p>
+      <div class="eyebrow">Theme</div>
+      <h3 class="feature-title">Light by default</h3>
+      <ul class="points-clean">
+        <li>High contrast, low chrome</li>
+        <li>Color accents for affordances</li>
+        <li>System preference toggle</li>
+      </ul>
     </div>
   </div>
   <div class="right">
     <div class="glass-frame tall">
-      <div class="placeholder">Product Screenshot / Dashboard UI</div>
+      <div class="placeholder">Mock: Sidebar (folders, tags) • Main editor (title, markdown, toolbar)</div>
     </div>
   </div>
 </div>
 
 ---
 
-# Architecture Overview
+# Feature highlights
 
-```mermaid
-%%{init: {
-  "theme": "dark",
-  "themeVariables": {
-    "primaryTextColor": "#E6EDF3",
-    "primaryColor": "#0B1220",
-    "lineColor": "#6E7681"
-  }
-}}%%
+<div class="card-grid three mt-2">
+  <div class="feature-card">
+    <div class="eyebrow">Capture</div>
+    <h3 class="feature-title">Quick Add</h3>
+    <p class="muted">Hotkeys, templates, and Markdown support</p>
+  </div>
+  <div class="feature-card">
+    <div class="eyebrow">Organize</div>
+    <h3 class="feature-title">Folders & Tags</h3>
+    <p class="muted">Hierarchies, filters, and saved views</p>
+  </div>
+  <div class="feature-card">
+    <div class="eyebrow">Search</div>
+    <h3 class="feature-title">Instant Search</h3>
+    <p class="muted">Full‑text search with highlighting</p>
+  </div>
+  <div class="feature-card">
+    <div class="eyebrow">Sync</div>
+    <h3 class="feature-title">Offline-first</h3>
+    <p class="muted">Local cache with background sync</p>
+  </div>
+  <div class="feature-card">
+    <div class="eyebrow">Security</div>
+    <h3 class="feature-title">End‑to‑end</h3>
+    <p class="muted">At-rest encryption with key escrow options</p>
+  </div>
+  <div class="feature-card">
+    <div class="eyebrow">Collab</div>
+    <h3 class="feature-title">Share & Comment</h3>
+    <p class="muted">Links, permissions, and inline comments</p>
+  </div>
+</div>
 
-flowchart TD
-    UI[🖥️ User Interface] --> API[⚙️ API Gateway]
-    API --> Auth[🔐 Authentication]
-    API --> Core[💼 Core Services]
-    Core --> DB[(📊 Database)]
-    Core --> Cache[(⚡ Cache)]
-    Core --> Queue[📬 Message Queue]
-    Queue --> Workers[🤖 Background Workers]
-    
-    style UI fill:#1C1A2B,stroke:#6B7FEB
-    style API fill:#1C1A2B,stroke:#6B7FEB
-    style Core fill:#1C1A2B,stroke:#6B7FEB
-    style DB fill:#2B2931,stroke:#40D79E
-    style Cache fill:#2B2931,stroke:#FFC75A
+---
+
+# Interactive demo: counter component
+
+Use the +/− buttons to interact.
+
+<Counter :count="2" />
+
+<div class="section-divider"></div>
+
+Code excerpt:
+
+```ts {all|1-6|7-17}
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const props = defineProps({ count: { default: 0 } })
+const counter = ref(props.count)
+</script>
+
+<template>
+  <div class="card" style="width: fit-content">
+    <button class="btn-secondary" @click="counter--">−</button>
+    <span style="padding: 0 12px">{{ counter }}</span>
+    <button class="btn-primary" @click="counter++">+</button>
+  </div>
+</template>
 ```
 
 ---
 
-# Use Cases
+# Data model
 
-<div class="card-grid three mt-2">
-  <div class="feature-card"><h3 class="feature-title">Enterprise Resource Planning</h3><p class="muted">Unified business management</p></div>
-  <div class="feature-card"><h3 class="feature-title">Customer Relationship Management</h3><p class="muted">360-degree customer view</p></div>
-  <div class="feature-card"><h3 class="feature-title">Supply Chain Optimization</h3><p class="muted">End-to-end visibility</p></div>
-  <div class="feature-card"><h3 class="feature-title">Financial Analytics</h3><p class="muted">Real-time financial insights</p></div>
-  <div class="feature-card"><h3 class="feature-title">HR Management</h3><p class="muted">Streamlined HR processes</p></div>
-  <div class="feature-card"><h3 class="feature-title">Project Management</h3><p class="muted">Collaborative project tracking</p></div>
-</div>
+```mermaid
+%%{init: { "theme": "neutral", "themeVariables": { "fontSize": "14px" } }}%%
+erDiagram
+  NOTE {
+    string id PK
+    string title
+    string content
+    string[] tags
+    int    pinned
+    datetime createdAt
+    datetime updatedAt
+  }
+  FOLDER {
+    string id PK
+    string name
+    datetime createdAt
+  }
+  NOTE }o--o{ FOLDER : "belongs to many"
+```
 
 ---
 
-# Market Opportunity
+# API design
+
+```http
+GET /api/notes?query=term&page=1&limit=20
+200 OK
+Content-Type: application/json
+
+{
+  "items": [
+    { "id": "n_123", "title": "Daily plan", "excerpt": "..." }
+  ],
+  "page": 1,
+  "hasMore": true
+}
+```
+
+```http
+POST /api/notes
+Content-Type: application/json
+
+{ "title": "New Note", "content": "# Hello", "tags": ["inbox"] }
+```
+
+---
+
+# Sync strategy
 
 <div class="split-cols mt-2">
   <div class="left">
     <div class="feature-card">
-      <div class="eyebrow">TAM</div>
-      <h3 class="feature-title">Total Addressable Market</h3>
-      <p class="muted">$100B+ globally</p>
-    </div>
-    <div class="feature-card">
-      <div class="eyebrow">Growth</div>
-      <h3 class="feature-title">Market Expansion</h3>
-      <p class="muted">25% CAGR expected</p>
-    </div>
-    <div class="feature-card">
-      <div class="eyebrow">Segments</div>
+      <div class="eyebrow">Approach</div>
+      <h3 class="feature-title">Offline-first</h3>
       <ul class="points-clean">
-        <li>Enterprise (500+ employees)</li>
-        <li>Mid-market (50-500)</li>
-        <li>SMB (under 50)</li>
+        <li>Local IndexedDB cache</li>
+        <li>Background sync with queues</li>
+        <li>Conflict resolution via vector clocks</li>
+      </ul>
+    </div>
+    <div class="feature-card">
+      <div class="eyebrow">Conflicts</div>
+      <h3 class="feature-title">Last-writer-wins (default)</h3>
+      <ul class="points-clean">
+        <li>Manual merge option for rich text</li>
+        <li>Change history retained per note</li>
       </ul>
     </div>
   </div>
   <div class="right">
-    <div class="glass-frame">
-      <div class="placeholder">Market Size Chart</div>
-    </div>
+```mermaid
+%%{init: { "theme": "neutral" }}%%
+sequenceDiagram
+  actor U as User
+  participant UI as App (UI)
+  participant DB as Local DB
+  participant API as Cloud API
+
+  U->>UI: Edit note
+  UI->>DB: Save draft
+  UI->>API: Queue sync (background)
+  API-->>UI: Ack (queued)
+  API-->>DB: Delta updates (pull)
+  UI-->>U: UI reflects latest state
+```
   </div>
 </div>
 
 ---
 
-# Competitive Landscape
+# Storage choices
 
-<div class="glass-frame wide mt-2">
-  <div class="placeholder">Competitive Positioning Matrix</div>
+- Local: IndexedDB (via Dexie) for structured notes and metadata
+- Remote: PostgreSQL for durability, JSONB for tags
+- Media: Object storage (S3 compatible), lazy loaded
+- Search: SQLite FTS or external (Meilisearch) depending on scale
+
+```sql
+-- PostgreSQL table (simplified)
+CREATE TABLE notes (
+  id        TEXT PRIMARY KEY,
+  title     TEXT NOT NULL,
+  content   TEXT NOT NULL,
+  tags      TEXT[] DEFAULT '{}',
+  pinned    BOOLEAN DEFAULT false,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now()
+);
+```
+
+---
+
+# Client code structure
+
+```bash
+src/
+├─ app/
+│  ├─ store.ts         # Pinia/Vuex-lite store
+│  ├─ routes.ts        # Route definitions
+│  └─ theme.ts         # Theme toggler (light default)
+├─ components/
+│  ├─ NoteList.vue
+│  ├─ NoteEditor.vue
+│  └─ TagChips.vue
+├─ services/
+│  ├─ api.ts           # HTTP client
+│  └─ sync.ts          # sync queue + conflict policy
+└─ utils/
+   └─ debounce.ts
+```
+
+---
+
+# Example: store and actions
+
+```ts
+// store.ts
+import { ref, computed } from 'vue'
+
+type Note = {
+  id: string; title: string; content: string; tags: string[]; pinned?: boolean;
+  createdAt: string; updatedAt: string;
+}
+
+const notes = ref<Note[]>([])
+
+export const useNotes = () => {
+  // PUBLIC_INTERFACE
+  function createNote(data: Partial<Note>) {
+    /** Create a note locally and enqueue sync. */
+    const now = new Date().toISOString()
+    const note: Note = {
+      id: crypto.randomUUID(),
+      title: data.title ?? 'Untitled',
+      content: data.content ?? '',
+      tags: data.tags ?? [],
+      pinned: !!data.pinned,
+      createdAt: now,
+      updatedAt: now,
+    }
+    notes.value.unshift(note)
+    // enqueueSync('create', note)
+    return note
+  }
+
+  const count = computed(() => notes.value.length)
+  return { notes, count, createNote }
+}
+```
+
+---
+
+# Search UX
+
+<div class="card-grid two mt-2">
+  <div class="feature-card">
+    <div class="eyebrow">Principles</div>
+    <ul class="points-clean">
+      <li>Zero-result guidance (did‑you‑mean)</li>
+      <li>Prefix and fuzzy match</li>
+      <li>Keyboard nav and previews</li>
+    </ul>
+  </div>
+  <div class="feature-card">
+    <div class="eyebrow">Index</div>
+    <ul class="points-clean">
+      <li>Title, tags, and headings weighted higher</li>
+      <li>Snippet generation in results</li>
+      <li>Debounced 200ms queries</li>
+    </ul>
+  </div>
 </div>
+
+---
+
+# Security model
+
+- At-rest encryption using per-user keys
+- Optional passphrase-derived key for private notebooks
+- Share links use scoped tokens with expiration
+- Audit logs for enterprise workspaces
+
+```ts
+// PUBLIC_INTERFACE
+export async function encryptNote(content: string, key: CryptoKey) {
+  /** AES-GCM encrypt note content; returns base64 ciphertext. */
+  const enc = new TextEncoder().encode(content)
+  const iv = crypto.getRandomValues(new Uint8Array(12))
+  const buf = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, enc)
+  const out = new Uint8Array(iv.byteLength + buf.byteLength)
+  out.set(iv, 0); out.set(new Uint8Array(buf), iv.byteLength)
+  return btoa(String.fromCharCode(...out))
+}
+```
+
+---
+
+# Accessibility and performance
+
+- WCAG AA contrast, focus rings, skip links
+- Reduced motion preference respected
+- Lazy loading of media; code-splitting routes
+- 60 FPS editor interactions with virtualization
+
+---
+
+# Live coding: generate placeholders
+
+Use imported utility from snippets/external.ts.
+
+```ts {all|1-5}
+import { emptyArray } from '../snippets/external'
+
+// PUBLIC_INTERFACE
+export function placeholders(n: number) {
+  /** Returns n empty items for skeleton UIs. */
+  return emptyArray<string>(n)
+}
+```
+
+---
+
+# Theming options
 
 <div class="card-grid three mt-2">
   <div class="feature-card">
-    <h3 class="feature-title">Our Advantages</h3>
-    <ul class="points-clean">
-      <li>Superior technology</li>
-      <li>Better user experience</li>
-      <li>Competitive pricing</li>
-    </ul>
+    <div class="eyebrow">Light</div>
+    <h3 class="feature-title">Default</h3>
+    <p class="muted">High legibility, calm palette</p>
   </div>
   <div class="feature-card">
-    <h3 class="feature-title">Market Position</h3>
-    <ul class="points-clean">
-      <li>Leader in innovation</li>
-      <li>Strong brand recognition</li>
-      <li>Growing market share</li>
-    </ul>
+    <div class="eyebrow">Dark</div>
+    <h3 class="feature-title">Optional</h3>
+    <p class="muted">OLED‑friendly, reduced glare</p>
   </div>
   <div class="feature-card">
-    <h3 class="feature-title">Differentiators</h3>
-    <ul class="points-clean">
-      <li>AI-powered features</li>
-      <li>Seamless integrations</li>
-      <li>Enterprise-grade security</li>
-    </ul>
+    <div class="eyebrow">High Contrast</div>
+    <h3 class="feature-title">A11y</h3>
+    <p class="muted">Elevated contrast & clear focus</p>
   </div>
 </div>
 
 ---
 
-# Implementation Timeline
+# Roadmap
 
-<div class="timeline mt-2">
+<div class="timeline horiz mt-2">
   <div class="time-node">
     <div class="time-dot"></div>
     <div class="time-card">
-      <div class="eyebrow">Phase 1: Q1 2025</div>
-      <h4>Foundation</h4>
-      <ul class="points-clean">
-        <li>System architecture design</li>
-        <li>Core infrastructure setup</li>
-        <li>Initial team formation</li>
-      </ul>
+      <div class="eyebrow">Q1</div>
+      <strong>Core editor</strong><br>
+      Templates, tags, search
     </div>
   </div>
   <div class="time-node">
     <div class="time-dot"></div>
     <div class="time-card">
-      <div class="eyebrow">Phase 2: Q2 2025</div>
-      <h4>Development</h4>
-      <ul class="points-clean">
-        <li>MVP development</li>
-        <li>Beta testing program</li>
-        <li>Initial customer feedback</li>
-      </ul>
+      <div class="eyebrow">Q2</div>
+      <strong>Sync & share</strong><br>
+      Collaboration & comments
     </div>
   </div>
   <div class="time-node">
     <div class="time-dot future"></div>
     <div class="time-card">
-      <div class="eyebrow">Phase 3: Q3 2025</div>
-      <h4>Launch</h4>
-      <ul class="points-clean">
-        <li>Public release</li>
-        <li>Marketing campaign</li>
-        <li>Customer onboarding</li>
-      </ul>
+      <div class="eyebrow">Q3</div>
+      <strong>AI features</strong><br>
+      Summaries, tagging, search boosters
     </div>
   </div>
 </div>
 
 ---
 
-# Success Metrics
+# Summary
 
-<div class="stats-grid mt-2">
-  <div class="stat-card">
-    <div class="stat-number">1M+</div>
-    <div class="stat-label">Active Users</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">$50M</div>
-    <div class="stat-label">ARR</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">95%</div>
-    <div class="stat-label">Retention Rate</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">150</div>
-    <div class="stat-label">Enterprise Clients</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">4.8</div>
-    <div class="stat-label">Customer Rating</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-number">24/7</div>
-    <div class="stat-label">Support</div>
-  </div>
-</div>
+- Minimal, responsive UI with sidebar navigation
+- Offline-first architecture with robust sync
+- Secure by default; share with control
+- Clear roadmap toward collaboration and AI
 
 ---
 
-# Case Study
-
-<div class="split-cols mt-2">
-  <div class="left">
-    <div class="feature-card">
-      <div class="eyebrow">Client</div>
-      <h3 class="feature-title">Fortune 500 Company</h3>
-      <ul class="points-clean">
-        <li>10,000+ employees</li>
-        <li>Global operations</li>
-        <li>Complex IT infrastructure</li>
-      </ul>
-    </div>
-    <div class="feature-card">
-      <div class="eyebrow">Challenge</div>
-      <ul class="points-clean">
-        <li>Fragmented systems</li>
-        <li>Manual processes</li>
-        <li>Limited visibility</li>
-      </ul>
-    </div>
-  </div>
-  <div class="right">
-    <div class="feature-card glass">
-      <div class="eyebrow">Results</div>
-      <h3 class="feature-title">Transformation Achieved</h3>
-      <ul class="points-clean">
-        <li>60% efficiency improvement</li>
-        <li>$5M annual savings</li>
-        <li>Real-time insights</li>
-      </ul>
-    </div>
-    <div class="glass-frame short">
-      <div class="placeholder">ROI Chart</div>
-    </div>
-  </div>
-</div>
-
----
-
-# Pricing & Plans
-
-<div class="card-grid three mt-2">
-  <div class="feature-card">
-    <div class="eyebrow">Starter</div>
-    <h3 class="feature-title">$99/month</h3>
-    <ul class="points-clean">
-      <li>Up to 10 users</li>
-      <li>Basic features</li>
-      <li>Email support</li>
-      <li>5GB storage</li>
-    </ul>
-    <button class="btn-secondary mt-2">Choose Plan</button>
-  </div>
-  <div class="feature-card">
-    <div class="pill">Popular</div>
-    <h3 class="feature-title">$299/month</h3>
-    <ul class="points-clean">
-      <li>Up to 50 users</li>
-      <li>Advanced features</li>
-      <li>Priority support</li>
-      <li>100GB storage</li>
-      <li>API access</li>
-    </ul>
-    <button class="btn-primary mt-2">Choose Plan</button>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Enterprise</div>
-    <h3 class="feature-title">Custom</h3>
-    <ul class="points-clean">
-      <li>Unlimited users</li>
-      <li>All features</li>
-      <li>Dedicated support</li>
-      <li>Unlimited storage</li>
-      <li>Custom integrations</li>
-    </ul>
-    <button class="btn-secondary mt-2">Contact Sales</button>
-  </div>
-</div>
-
----
-
-# Technology Stack
-
-<div class="feature-grid mt-2">
-  <div class="feature-card">
-    <div class="eyebrow">Frontend</div>
-    <ul class="points-clean">
-      <li>React / Vue.js / Angular</li>
-      <li>TypeScript</li>
-      <li>Tailwind CSS</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Backend</div>
-    <ul class="points-clean">
-      <li>Node.js / Python / Go</li>
-      <li>GraphQL / REST APIs</li>
-      <li>Microservices</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Infrastructure</div>
-    <ul class="points-clean">
-      <li>AWS / Azure / GCP</li>
-      <li>Kubernetes</li>
-      <li>CI/CD pipelines</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Data</div>
-    <ul class="points-clean">
-      <li>PostgreSQL / MongoDB</li>
-      <li>Redis</li>
-      <li>Elasticsearch</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Security</div>
-    <ul class="points-clean">
-      <li>End-to-end encryption</li>
-      <li>OAuth 2.0 / SAML</li>
-      <li>SOC 2 compliant</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <div class="eyebrow">Monitoring</div>
-    <ul class="points-clean">
-      <li>Prometheus / Grafana</li>
-      <li>ELK Stack</li>
-      <li>APM tools</li>
-    </ul>
-  </div>
-</div>
-
----
-
-# Team
-
-<div class="card-grid four mt-2">
-  <div class="feature-card">
-    <h4 class="feature-title">CEO</h4>
-    <p class="muted small">20+ years experience</p>
-    <p class="muted small">Former Fortune 500 exec</p>
-  </div>
-  <div class="feature-card">
-    <h4 class="feature-title">CTO</h4>
-    <p class="muted small">15+ years in tech</p>
-    <p class="muted small">Ex-FAANG engineer</p>
-  </div>
-  <div class="feature-card">
-    <h4 class="feature-title">CPO</h4>
-    <p class="muted small">Product visionary</p>
-    <p class="muted small">3 successful exits</p>
-  </div>
-  <div class="feature-card">
-    <h4 class="feature-title">CFO</h4>
-    <p class="muted small">Finance expert</p>
-    <p class="muted small">IPO experience</p>
-  </div>
-</div>
-
-<div class="card mt-2">
-  <h3>Advisory Board</h3>
-  <ul class="points-clean">
-    <li>Industry veterans from leading tech companies</li>
-    <li>Domain experts in enterprise software</li>
-    <li>Strategic advisors with deep market connections</li>
-  </ul>
-</div>
-
----
-
-# Customer Testimonials
-
-<div class="card-grid two mt-2">
-  <div class="feature-card glass">
-    <p class="muted">"This platform transformed our operations. We've seen incredible efficiency gains and cost savings."</p>
-    <div class="mt-2">
-      <strong>John Smith</strong><br>
-      <span class="text-xs muted">CTO, Tech Corp</span>
-    </div>
-  </div>
-  <div class="feature-card glass">
-    <p class="muted">"The best investment we've made. ROI was evident within the first quarter."</p>
-    <div class="mt-2">
-      <strong>Jane Doe</strong><br>
-      <span class="text-xs muted">CEO, Innovation Inc</span>
-    </div>
-  </div>
-</div>
-
----
-
-# Next Steps
-
-<div class="cta-band">
-  <div>
-    <div class="overline">Get Started Today</div>
-    <h2 class="text-hero">Ready to Transform Your Business?</h2>
-    <p class="muted">Join thousands of companies already using our platform</p>
-    <div class="cta-actions">
-      <button class="btn-primary">Start Free Trial</button>
-      <button class="btn-secondary">Schedule Demo</button>
-    </div>
-  </div>
-  <div>
-    <div class="card">
-      <div class="eyebrow">Contact</div>
-      <ul class="points-clean">
-        <li>Sales: sales@example.com</li>
-        <li>Support: support@example.com</li>
-        <li>Phone: 1-800-EXAMPLE</li>
-      </ul>
-      <div class="muted small mt-4">www.example.com</div>
-    </div>
-  </div>
-</div>
-
----
-
-# Appendix
-
-<div class="card-grid two mt-2">
-  <div class="feature-card">
-    <h3 class="feature-title">Resources</h3>
-    <ul class="points-clean">
-      <li>Technical documentation</li>
-      <li>API reference</li>
-      <li>Video tutorials</li>
-      <li>Community forum</li>
-    </ul>
-  </div>
-  <div class="feature-card">
-    <h3 class="feature-title">Legal</h3>
-    <ul class="points-clean">
-      <li>Terms of service</li>
-      <li>Privacy policy</li>
-      <li>Security compliance</li>
-      <li>SLA agreements</li>
-    </ul>
-  </div>
-</div>
-
----
 layout: center
 class: text-center
 ---
 
-# Thank You
+# Thank you
 
-Questions?
-
-<div class="mt-4 subtle">Press S for presenter mode • Press E to open editor • Use arrow keys to navigate</div>
+Press S for presenter mode • E to edit • Arrow keys to navigate
